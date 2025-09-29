@@ -2264,31 +2264,31 @@ oiled gears, 4/22/2020</code></pre>
             </div>
             <div class="step-content">
               <p>The agent activates the plan (again).</p>
-              <p>a) The NEXT step selected is #SEARCH.1, which has no preconditions that are failing.</p>
-              <p>b) The procedure is executed.</p>
-              <p>c) The agent begins the embodied search heuristic.</p>
+              <p style="margin: 5px 0;">a) The NEXT step selected is #SEARCH.1, which has no preconditions that are failing.</p>
+              <p style="margin: 5px 0;">b) The procedure is executed.</p>
+              <p style="margin: 5px 0;">c) The agent begins the embodied search heuristic.</p>
               
-              <!-- Video snippets for search initiation -->
-              <div class="video-grid-container" style="margin: 20px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-                <!-- Left side: Simulation -->
+              <!-- Videos for search demonstration -->
+              <div class="video-grid-container" style="margin: 30px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+                <!-- Search Simulation Video -->
                 <div class="video-container" style="text-align: center;">
-                  <video controls muted autoplay loop class="step-video" style="width: 100%; border-radius: 4px;">
-                    <source src="assets/videos/demos/search_simulation.mp4" type="video/mp4">
+                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Search_Sim.mp4', 'Search Simulation Demo')">
+                    <source src="assets/videos/demos/Search_Sim.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
-                  <div class="figure-caption">
-                    <p><strong>Simulation View</strong></p>
+                  <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
+                    <p><strong>Search Simulation</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
                 </div>
                 
-                <!-- Right side: Robot view -->
+                <!-- Search Robot Video -->
                 <div class="video-container" style="text-align: center;">
-                  <video controls muted autoplay loop class="step-video" style="width: 100%; border-radius: 4px;">
-                    <source src="assets/videos/demos/search_robot_view.mp4" type="video/mp4">
+                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Search_Robot.mp4', 'Search Robot Demo')">
+                    <source src="assets/videos/demos/Search_Robot.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
-                  <div class="figure-caption">
-                    <p><strong>Robot View</strong></p>
+                  <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
+                    <p><strong>Search Robot</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
                 </div>
               </div>
@@ -2325,43 +2325,43 @@ oiled gears, 4/22/2020</code></pre>
             </div>
             <div class="step-content">
               <p>New visual data is observed, resulting in the following VMR:</p>
+              <pre class="code-block"><code>#VOLUNTARY-VISUAL-EVENT.1
+                agent                   #LEIA.1
+                theme                   #THERMOSTAT.1
+                    
+            #THERMOSTAT.1
+                has-label               "thermostat"
+                absolute-location       37.5, 19.2, 86.3
+                on-top-of               ->SHELF.1</code></pre>
               
               <!-- Images for object detection -->
-              <div class="image-grid-container" style="margin: 20px 0; display: flex; flex-direction: column; gap: 20px; align-items: center;">
-                <!-- Top: Simulation image -->
+              <div class="image-grid-container" style="margin: 20px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: start;">
+                <!-- Simulation image -->
                 <div class="image-container" style="text-align: center;">
-                  <img src="assets/images/results/object_detection_simulation.jpg" alt="Object Detection Simulation" style="max-width: 80%; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                  <img src="assets/images/results/thermostat_found_sim.jpg" alt="Object Detection Simulation" class="clickable-image" style="width: 100%; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); cursor: pointer;" onclick="openImageModal('assets/images/results/thermostat_found_sim.jpg', 'Object Detection Simulation', 'Simulation view showing object detection results')">
                   <div class="figure-caption">
-                    <p><strong>Simulation View</strong></p>
+                    <p><strong>Simulation View</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
                 </div>
                 
-                <!-- Bottom: Robot images -->
-                <div class="robot-images-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: 800px;">
-                  <div class="image-container" style="text-align: center;">
-                    <img src="assets/images/results/object_detection_robot1.jpg" alt="Robot View 1" style="width: 100%; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
-                    <div class="figure-caption">
-                      <p><strong>Robot View 1</strong></p>
-                    </div>
+                <!-- Robot View 1 -->
+                <div class="image-container" style="text-align: center;">
+                  <img src="assets/images/results/thermostat_found_robot.jpg" alt="Robot View 1" class="clickable-image" style="width: 100%; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); cursor: pointer;" onclick="openImageModal('assets/images/results/thermostat_found_robot.jpg', 'Robot View 1', 'Robot perspective showing object detection')">
+                  <div class="figure-caption">
+                    <p><strong>Robot View 1</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
-                  
-                  <div class="image-container" style="text-align: center;">
-                    <img src="assets/images/results/object_detection_robot2.jpg" alt="Robot View 2" style="width: 100%; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
-                    <div class="figure-caption">
-                      <p><strong>Robot View 2</strong></p>
-                    </div>
+                </div>
+                
+                <!-- Robot View 2 -->
+                <div class="image-container" style="text-align: center;">
+                  <img src="assets/images/results/thermostat_found_robot_cam.jpg" alt="Robot View 2" class="clickable-image" style="width: 100%; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); cursor: pointer;" onclick="openImageModal('assets/images/results/thermostat_found_robot_cam.jpg', 'Robot View 2', 'Robot camera view showing object detection')">
+                  <div class="figure-caption">
+                    <p><strong>Robot View 2</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
                 </div>
               </div>
               
-              <pre class="code-block"><code>#VOLUNTARY-VISUAL-EVENT.1
-    agent                   #LEIA.1
-    theme                   #THERMOSTAT.1
-        
-#THERMOSTAT.1
-    has-label               "thermostat"
-    absolute-location       37.5, 19.2, 86.3
-    on-top-of               ->SHELF.1</code></pre>
+              
             </div>
           </div>
           
@@ -2373,36 +2373,36 @@ oiled gears, 4/22/2020</code></pre>
             </div>
             <div class="step-content">
               <p>The agent activates the plan (again).</p>
-              <p>a) The awaited condition by #WAIT-EVENT.1 is now satisfied, so:</p>
+              <p style="margin: 5px 0;">a) The awaited condition by #WAIT-EVENT.1 is now satisfied, so:</p>
               <div class="plan-status status-pending">Plan.3 is PENDING (the step is complete, but the plan is not).</div>
-              <p>b) The NEXT step selected is #PICK-UP.1, which has no preconditions that are failing.</p>
-              <p>c) The procedure is executed.</p>
-              <p>d) The agent continues to attend to its agenda during the time this takes:</p>
+              <p style="margin: 5px 0;">b) The NEXT step selected is #PICK-UP.1, which has no preconditions that are failing.</p>
+              <p style="margin: 5px 0;">c) The procedure is executed.</p>
+              <p style="margin: 5px 0;">d) The agent continues to attend to its agenda during the time this takes:</p>
               <div class="plan-status status-running">Plan.3 is RUNNING, so there is no effect (it must finish before continuing).</div>
-              <p>e) The procedure finishes, which sends a callback:</p>
+              <p style="margin: 5px 0;">e) The procedure finishes, which sends a callback:</p>
               <div class="plan-status status-pending">Plan.3 is PENDING (the step is complete, but the plan is not).</div>
               
-              <!-- Videos for object pickup -->
-              <div class="video-grid-container" style="margin: 20px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-                <!-- Left side: Simulation -->
+              <!-- Videos for pickup demonstration -->
+              <div class="video-grid-container" style="margin: 30px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+                <!-- Pickup Simulation Video -->
                 <div class="video-container" style="text-align: center;">
-                  <video controls muted autoplay loop class="step-video" style="width: 100%; border-radius: 4px;">
-                    <source src="assets/videos/demos/object_pickup_simulation.mp4" type="video/mp4">
+                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; object-position: bottom; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Pickup_Sim.mp4', 'Pickup Simulation Demo')">
+                    <source src="assets/videos/demos/Pickup_Sim.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
-                  <div class="figure-caption">
-                    <p><strong>Simulation</strong></p>
+                  <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
+                    <p><strong>Pickup Simulation</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
                 </div>
                 
-                <!-- Right side: Robot -->
+                <!-- Pickup Robot Video -->
                 <div class="video-container" style="text-align: center;">
-                  <video controls muted autoplay loop class="step-video" style="width: 100%; border-radius: 4px;">
-                    <source src="assets/videos/demos/object_pickup_robot.mp4" type="video/mp4">
+                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Pickup_robot.mp4', 'Pickup Robot Demo')">
+                    <source src="assets/videos/demos/Pickup_robot.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
-                  <div class="figure-caption">
-                    <p><strong>Robot</strong></p>
+                  <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
+                    <p><strong>Pickup Robot</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
                 </div>
               </div>
@@ -2415,15 +2415,40 @@ oiled gears, 4/22/2020</code></pre>
               <span class="step-number">27</span>
               Navigation
             </div>
-            <div class="step-content">
-              <p>The agent activates the plan (again).</p>
-              <p>a) The NEXT step selected is #NAVIGATE-TO.1, which has no preconditions that are failing.</p>
-              <p>b) The procedure is executed.</p>
-              <p>c) The agent continues to attend to its agenda during the time this takes:</p>
-              <div class="plan-status status-running">Plan.3 is RUNNING, so there is no effect (it must finish before continuing).</div>
-              <p>e) The procedure finishes, which sends a callback:</p>
-              <div class="plan-status status-pending">Plan.3 is PENDING (the step is complete, but the plan is not).</div>
-            </div>
+              <div class="step-content">
+                <p>The agent activates the plan (again).</p>
+                <p style="margin: 5px 0;">a) The NEXT step selected is #NAVIGATE-TO.1, which has no preconditions that are failing.</p>
+                <p style="margin: 5px 0;">b) The procedure is executed.</p>
+                <p style="margin: 5px 0;">c) The agent continues to attend to its agenda during the time this takes:</p>
+                <div class="plan-status status-running">Plan.3 is RUNNING, so there is no effect (it must finish before continuing).</div>
+                <p style="margin: 5px 0;">e) The procedure finishes, which sends a callback:</p>
+                <div class="plan-status status-pending">Plan.3 is PENDING (the step is complete, but the plan is not).</div>
+                
+                <!-- Videos for return demonstration -->
+                <div class="video-grid-container" style="margin: 30px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+                  <!-- Return Simulation Video -->
+                  <div class="video-container" style="text-align: center;">
+                    <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Return_Sim.mp4', 'Return Simulation Demo')">
+                      <source src="assets/videos/demos/Return_Sim.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                    <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
+                      <p><strong>Return Simulation</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                    </div>
+                  </div>
+                  
+                  <!-- Return Robot Video -->
+                  <div class="video-container" style="text-align: center;">
+                    <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Return_Robot.mp4', 'Return Robot Demo')">
+                      <source src="assets/videos/demos/Return_Robot.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                    <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
+                      <p><strong>Return Robot</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
           
           <!-- Step 28 -->
@@ -2434,8 +2459,8 @@ oiled gears, 4/22/2020</code></pre>
             </div>
             <div class="step-content">
               <p>The agent activates the plan (again).</p>
-              <p>a) The NEXT step selected is #GIVE.1, which has no preconditions that are failing.</p>
-              <p>b) @GIVE is a multi-step event (not shown) that causes the agent to:</p>
+              <p style="margin: 5px 0;">a) The NEXT step selected is #GIVE.1, which has no preconditions that are failing.</p>
+              <p style="margin: 5px 0;">b) @GIVE is a multi-step event (not shown) that causes the agent to:</p>
               <ul>
                 <li>Say "Here you go." while simultaneously,</li>
                 <li>offer the thermostat to the speaker.</li>
@@ -2446,6 +2471,31 @@ oiled gears, 4/22/2020</code></pre>
               <p><strong>Task completion:</strong> The entire fetch task is now complete:</p>
               <div class="plan-status status-finished">Plan.3 FINISHED</div>
               <p><strong>Summary:</strong> HARMONIC has successfully completed the entire interaction cycle: understanding the problem, diagnosing potential causes, providing historical information, and physically retrieving the requested object. This demonstrates the system's ability to seamlessly integrate natural language understanding, reasoning, and physical action.</p>
+              
+              <!-- Videos for drop demonstration -->
+              <div class="video-grid-container" style="margin: 30px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+                <!-- Drop Simulation Video -->
+                <div class="video-container" style="text-align: center;">
+                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; object-position: bottom; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Drop_Sim.mp4', 'Drop Simulation Demo')">
+                    <source src="assets/videos/demos/Drop_Sim.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
+                    <p><strong>Drop Simulation</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                  </div>
+                </div>
+                
+                <!-- Drop Robot Video -->
+                <div class="video-container" style="text-align: center;">
+                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Drop_Robot.mp4', 'Drop Robot Demo')">
+                    <source src="assets/videos/demos/Drop_Robot.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
+                    <p><strong>Drop Robot</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -3548,7 +3598,7 @@ oiled gears, 4/22/2020</code></pre>
         
         // Bottom External Modules
         'perception-mapping': {
-          title: 'Perception and Mapping',
+          title: 'Perception and Interpretation',
           description: 'Low-level processing for environmental sensing and map creation. Handles SLAM, object detection, and spatial understanding.'
         },
         'reactive-planning': {
