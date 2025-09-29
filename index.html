@@ -193,23 +193,9 @@
       background: #fff;
       border-color: #000;
       box-shadow: 0 0 25px rgba(255, 0, 0, 1);
-      animation: pulse-red 1.5s infinite;
     }
     
-    @keyframes pulse-red {
-      0% {
-        box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-        transform: scale(1);
-      }
-      50% {
-        box-shadow: 0 0 30px rgba(255, 0, 0, 1);
-        transform: scale(1.1);
-      }
-      100% {
-        box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-        transform: scale(1);
-      }
-    }
+    
     
     .architecture-hotspot::before {
       content: '';
@@ -314,17 +300,7 @@
       }
     }
     
-    .architecture-hotspot {
-      animation: fadeInUp 0.6s ease-out forwards;
-    }
     
-    .architecture-hotspot:nth-child(2) { animation-delay: 0.1s; }
-    .architecture-hotspot:nth-child(3) { animation-delay: 0.2s; }
-    .architecture-hotspot:nth-child(4) { animation-delay: 0.3s; }
-    .architecture-hotspot:nth-child(5) { animation-delay: 0.4s; }
-    .architecture-hotspot:nth-child(6) { animation-delay: 0.5s; }
-    .architecture-hotspot:nth-child(7) { animation-delay: 0.6s; }
-    .architecture-hotspot:nth-child(8) { animation-delay: 0.7s; }
     
     .architecture-tooltip {
       position: absolute;
@@ -767,12 +743,10 @@
     
     .demo-button.simulation-button:hover {
       background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-      transform: translateY(-1px);
     }
     
     .demo-button.robot-button:hover {
       background: linear-gradient(135deg, #ee82f0 0%, #f3455a 100%);
-      transform: translateY(-1px);
     }
     
     .step-counter {
@@ -916,12 +890,8 @@
     .step-video {
       border: 1px solid var(--border-color);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
     }
     
-    .step-video:hover {
-      transform: scale(1.02);
-    }
     
     /* Video grid container for step videos */
     .video-grid-container {
@@ -983,7 +953,6 @@
     }
     
     .simulation-button:hover {
-      transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
     }
     
@@ -994,7 +963,6 @@
     }
     
     .robot-button:hover {
-      transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(240, 147, 251, 0.4);
     }
     
@@ -1017,12 +985,8 @@
       width: 100%;
       border-radius: 8px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      transition: transform 0.2s;
     }
     
-    .full-demo-video:hover {
-      transform: scale(1.01);
-    }
 
     /* Step Navigation Styles */
     .step-navigation {
@@ -1062,7 +1026,6 @@
     .step-nav-button:hover {
       background: var(--light-gray);
       border-color: var(--accent-color);
-      transform: translateY(-1px);
     }
     
     .step-nav-button.active {
@@ -1090,7 +1053,6 @@
     
     .simulation-nav-button:hover {
       background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-      transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
     }
     
@@ -1111,7 +1073,6 @@
     
     .robot-nav-button:hover {
       background: linear-gradient(135deg, #ee82f0 0%, #f3455a 100%);
-      transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(240, 147, 251, 0.4);
     }
     
@@ -1469,13 +1430,8 @@
         
         .clickable-video {
           cursor: pointer;
-          transition: transform 0.2s, box-shadow 0.2s;
         }
         
-        .clickable-video:hover {
-          transform: scale(1.02);
-          box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
-        }
     </style>
 </head>
 <body>
@@ -1576,9 +1532,9 @@
       <!-- Overview Section - TO BE CUSTOMIZED -->
       <section id="overview">
       <h2>Overview</h2>
-      <div class="placeholder">
-        The paper introduces HARMONIC (Human-AI Robotic Team Member Operating with Natural Intelligence and Communication), a content-centric cognitive robotic architecture designed to enable safe, explainable, and human-like collaboration between robots and people. HARMONIC integrates a strategic layer for high-level reasoning with a tactical layer for real-time control, inspired by Kahneman’s dual-system model of deliberative and reflexive thinking. The strategic layer, built on the OntoAgent cognitive framework, performs goal selection, plan generation, and natural language communication using explicit, inspectable knowledge representations. The tactical layer manages perception, sensorimotor control, and behavior trees for adaptive execution, ensuring that every action is grounded in verifiable data and safety constraints. This design directly addresses key challenges of current foundation-model approaches—such as data scarcity, hallucinations, and lack of transparency, while supporting long-horizon planning and human-robot teaming. Proof-of-concept demonstrations include a shipboard maintenance assistant and a multi-robot search-and-retrieve team, showcasing HARMONIC’s ability to combine explainable decision-making, natural language interaction, and robust physical execution.
-      </div>
+        <div class="placeholder" style="text-align: justify;">
+          This paper presents HARMONIC (Human-AI Robotic Team Member Operating with Natural Intelligence and Communication), a novel cognitive-robotic architecture that fundamentally reimagines how robots can collaborate with humans in complex, real-world scenarios. Unlike current foundation-model approaches that suffer from hallucinations, lack of transparency, and data scarcity issues, HARMONIC integrates a mature cognitive architecture (OntoAgent) with robotic control systems to create a dual-layer framework. The strategic layer performs high-level reasoning using explicit, inspectable knowledge representations, while the tactical layer handles real-time execution through behavior trees and specialized robotic controllers. This design enables robots to engage in transparent, explainable decision-making, natural language communication, and safe physical execution across diverse environments. We demonstrate HARMONIC's capabilities through two comprehensive proof-of-concept systems: a shipboard maintenance assistant that collaborates with human mechanics to diagnose problems and retrieve replacement parts, and a multi-robot search team that coordinates heterogeneous robots (UGV and drone) to locate lost objects in apartment environments. Both systems operate seamlessly across high-fidelity simulation and physical robotic platforms, showcasing HARMONIC's ability to bridge the gap between symbolic reasoning and embodied action while maintaining the transparency and trust essential for real-world human-robot collaboration.
+        </div>
       </section>
       
       <!-- Architecture Section -->
@@ -1665,9 +1621,9 @@
         <div class="figure-caption">
           <p>An overview of the HARMONIC framework, showing the Strategic and Tactical components representing the high-level planning (System 2) and low-level execution (System 1), respectively.</p>
         </div>
+        
       </div>
       </section>
-      
       
       
       <!-- Evaluation Results Section - TO BE CUSTOMIZED -->
@@ -1688,7 +1644,7 @@
                 <h4 style="margin: 0; color: var(--accent-color); font-size: 16px; font-weight: 600; letter-spacing: 0.5px;">SCENARIO 1</h4>
               </div>
               <p style="margin: 0; font-style: italic; color: var(--text-color); line-height: 1.7; font-size: 15px; text-align: justify;">
-                In a shipboard maintenance team, the robot assistant, <strong style="color: var(--accent-color); font-style: normal;">LEIA2</strong>, interacts conversationally with the maintenance mechanic, <strong style="color: var(--accent-color); font-style: normal;">Daniel</strong>, assists in diagnosing engine issues, and supports maintenance tasks by locating and retrieving necessary replacement parts.
+                In a shipboard maintenance team, the robot assistant, <strong style="color: var(--accent-color); font-style: normal;">LEIA</strong>, interacts conversationally with the maintenance mechanic, <strong style="color: var(--accent-color); font-style: normal;">Daniel</strong>, assists in diagnosing engine issues, and supports maintenance tasks by locating and retrieving necessary replacement parts.
               </p>
             </div>
           </div>
@@ -2506,7 +2462,7 @@ oiled gears, 4/22/2020</code></pre>
               <!-- Full-width simulation video -->
               <div class="full-width-video-container" style="margin: 30px 0; width: 100%;">
                 <video controls muted autoplay loop class="full-demo-video" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);">
-                  <source src="assets/videos/demos/full_simulation_demo.mp4" type="video/mp4">
+                  <source src="assets/videos/demos/demo1_simulation.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
                 <div class="figure-caption">
@@ -2530,7 +2486,7 @@ oiled gears, 4/22/2020</code></pre>
               <!-- Full-width robot video -->
               <div class="full-width-video-container" style="margin: 30px 0; width: 100%;">
                 <video controls muted autoplay loop class="full-demo-video" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);">
-                  <source src="assets/videos/demos/full_robot_demo.mp4" type="video/mp4">
+                  <source src="assets/videos/demos/demo2_robot.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
                 <div class="figure-caption">
@@ -2540,6 +2496,293 @@ oiled gears, 4/22/2020</code></pre>
               
             </div>
           </div>
+        </div>
+      </div>
+      </section>
+      
+      <hr class="section-divider">
+
+      <!-- Evaluation 2 Section -->
+      <section id="evaluation2">
+      <h2>Evaluation - 2 (Multi-Robot Search and Retrieve)</h2>
+      <div class="interactive-demo">
+        <div class="demo-header">
+          <div class="demo-title">Step-by-Step HARMONIC Distributed Planning Process</div>
+          <div class="demo-description">
+            This interactive demonstration shows how HARMONIC distributes plans between strategic and tactical components across multiple robots (UGV and drone). <strong>Click any step number above to jump directly to that part of the process</strong>, or use the Previous/Next buttons to go through sequentially. Each step shows the detailed collaborative planning and execution behind HARMONIC's multi-robot coordination.
+          </div>
+          <div class="scenario-description" style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, rgba(52, 152, 219, 0.08) 0%, rgba(155, 89, 182, 0.08) 100%); border-radius: 12px; border: 1px solid rgba(52, 152, 219, 0.2); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--accent-color) 0%, #9b59b6 100%);"></div>
+            <div style="position: relative; z-index: 1;">
+              <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                <div style="width: 12px; height: 12px; background: linear-gradient(135deg, var(--accent-color) 0%, #9b59b6 100%); border-radius: 3px; margin-right: 12px; transform: rotate(45deg); box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);"></div>
+                <h4 style="margin: 0; color: var(--accent-color); font-size: 16px; font-weight: 600; letter-spacing: 0.5px;">SCENARIO 2</h4>
+              </div>
+              <p style="margin: 0; font-style: italic; color: var(--text-color); line-height: 1.7; font-size: 15px; text-align: justify;">
+                In an apartment environment, a heterogeneous multi-robot team consisting of a <strong style="color: var(--accent-color); font-style: normal;">UGV</strong> and a <strong style="color: var(--accent-color); font-style: normal;">drone</strong> assists a human, <strong style="color: var(--accent-color); font-style: normal;">Danny</strong>, in locating a lost set of keys.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="demo-controls">
+          <button class="demo-button" id="prevStep2" onclick="previousStep2()">← Previous</button>
+          <button class="demo-button" id="nextStep2" onclick="nextStep2()">Next →</button>
+          <button class="demo-button" id="autoPlayBtn2" onclick="toggleAutoPlay2()">Auto Play</button>
+          <button class="demo-button simulation-button" onclick="goToStep2(10)" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;">
+            Watch Multi-Robot Demo
+          </button>
+          <div class="step-counter">
+            Step <span id="currentStep2">0</span> of <span id="totalSteps2">10</span>
+          </div>
+        </div>
+        
+        <!-- Step Navigation Menu -->
+        <div class="step-navigation">
+          <div class="step-nav-title">Jump to Step:</div>
+          <div class="step-nav-grid" id="stepNavGrid2">
+            <!-- Step navigation buttons will be generated by JavaScript -->
+          </div>
+        </div>
+        
+        <div class="demo-content" id="demoContent2">
+          <!-- Introduction -->
+          <div class="demo-step active" id="step2-0" style="display: none;">
+            <div class="step-title">
+              <span class="step-number">0</span>
+              Understanding HARMONIC's Distributed Planning Process
+            </div>
+            <div class="step-content">
+              <p><strong>Welcome to the HARMONIC Multi-Robot Demo!</strong></p>
+              <p>This demonstration shows how HARMONIC coordinates multiple robots through distributed planning, where high-level strategic plans are divided into tactical commands for collaborative execution.</p>
+              
+              <h4>What You'll See:</h4>
+              <ul>
+                <li><strong>Collaborative Activity Scripts:</strong> How team leaders and subordinates coordinate through meta-scripts</li>
+                <li><strong>Distributed Plan Execution:</strong> How plans are divided between strategic and tactical layers</li>
+                <li><strong>Multi-Robot Coordination:</strong> How UGV and drone work together in search missions</li>
+                <li><strong>Behavior Tree Integration:</strong> How tactical layers execute collaborative plans</li>
+                <li><strong>Real-time Communication:</strong> How robots coordinate and report findings</li>
+              </ul>
+              
+              <h4>Key Concepts:</h4>
+              <ul>
+                <li><strong>COLLABORATIVE-ACTIVITY Script:</strong> Meta-script for team coordination</li>
+                <li><strong>SEARCH-FOR-LOST-OBJECT:</strong> Domain-specific script for search missions</li>
+                <li><strong>Behavior Trees (BTs):</strong> Tactical layer control structures</li>
+                <li><strong>Vision Meaning Representations (VMRs):</strong> Vision Meaning Representations</li>
+              </ul>
+              
+              <p><strong>Ready to explore?</strong> Click "Next" or any step number above to begin!</p>
+            </div>
+          </div>
+          
+          <!-- Step 1 -->
+          <div class="demo-step active" id="step2-1">
+            <div class="step-title">
+              <span class="step-number">1</span>
+              Task Initiation: Danny's Request (M1)
+            </div>
+            <div class="step-content">
+              <div class="human-input">
+                <strong>DANNY:</strong> "I think I left my keys at home. Can you look around for them?"
+              </div>
+              <p><strong>What's happening:</strong> Danny initiates the search task by sending a message to the robot team. This triggers the team leader (UGV-U) to place a COLLABORATIVE-ACTIVITY on its agenda.</p>
+              <p><strong>HARMONIC's response:</strong> The UGV-U recognizes this as a search task and begins the collaborative planning process:</p>
+              <pre class="code-block"><code>@COLLABORATIVE-ACTIVITY (leader)
+[INIT]
+  *identify-team-members
+[SELECT-PLAN]
+  // Select a plan from available options.
+  RUN *identify-candidate-plans
+  RUN *select-plan
+  // Selected: SEARCH-FOR-LOST-OBJECT</code></pre>
+            </div>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="demo-step" id="step2-2">
+            <div class="step-title">
+              <span class="step-number">2</span>
+              Information Gathering: Object Description (M2-M3)
+            </div>
+            <div class="step-content">
+              <div class="robot-output">
+                <strong>UGV-U:</strong> "What do they look like?"
+              </div>
+              <div class="human-input">
+                <strong>DANNY:</strong> "They are on a red keychain with a small flashlight."
+              </div>
+              <p><strong>What's happening:</strong> The UGV-U verifies preconditions for the SEARCH-FOR-LOST-OBJECT plan by gathering information about the object's appearance.</p>
+              <p><strong>Strategic layer processing:</strong> The UGV-U updates its plan with the new information:</p>
+              <pre class="code-block"><code>[PRECONDITIONS]
+  // Preconditions from the selected plan
+  RUN NEW @REQUEST-OBJECT-TYPE ✓
+  RUN NEW @REQUEST-OBJECT-FEATURES ✓
+  // Features: red keychain, small flashlight
+  RUN NEW @REQUEST-LAST-SEEN-AT
+  RUN NEW @REQUEST-LOCATION-CONSTRAINED</code></pre>
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="demo-step" id="step2-3">
+            <div class="step-title">
+              <span class="step-number">3</span>
+              Location Information: Last Known Location (M4-M5)
+            </div>
+            <div class="step-content">
+              <div class="robot-output">
+                <strong>UGV-U:</strong> "Do you recall where you last had them?"
+              </div>
+              <div class="human-input">
+                <strong>DANNY:</strong> "I used them last night to open the front door, but they could be anywhere."
+              </div>
+              <p><strong>What's happening:</strong> The UGV-U gathers location information to prioritize search areas. The front door area becomes a priority location for the search sequence.</p>
+              <p><strong>Plan instantiation:</strong> The UGV-U now has enough information to instantiate the complete search plan:</p>
+              <pre class="code-block"><code>@SEARCH-FOR-LOST-OBJECT
+  [SEARCH-ZONES]
+    // Search in each ZONE the agent knows.
+    // Priority: FRONT DOOR (last used location)
+    FOR #ZONE-1 IN #LOCATION-1.SEARCHABLE-ZONE 
+      RUN ASYNC AWAIT *search 
+      INTERRUPT WHEN #OBJECT-1.LOCATION KNOWN
+      RUN *consider-reporting</code></pre>
+            </div>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="demo-step" id="step2-4">
+            <div class="step-title">
+              <span class="step-number">4</span>
+              Plan Distribution: Search Initiation (M6)
+            </div>
+            <div class="step-content">
+              <div class="robot-output">
+                <strong>UGV-U:</strong> "Let's search the apartment."
+              </div>
+              <p><strong>What's happening:</strong> With preconditions met, the UGV-U moves to SUGGEST-PLAN and shares the domain plan with the drone through natural language dialog.</p>
+              <p><strong>Subordinate response:</strong> The DRONE-D receives this information and adopts its assignment within the suggested plan:</p>
+              <pre class="code-block"><code>@COLLABORATIVE-ACTIVITY (subordinate)
+[INIT]
+  *identify-team-members
+[WAIT-FOR-PLAN]
+  // Wait for a plan from the leader
+  AWAIT $.HAS-COLLABORATIVE-PLAN ISA @EVENT ✓
+[RUN-PLAN]
+  // Execute assigned search area: APARTMENT
+  RUN NEW @SEARCH-FOR-LOST-OBJECT</code></pre>
+            </div>
+          </div>
+          
+          
+          <!-- Step 5 -->
+          <div class="demo-step" id="step2-5">
+            <div class="step-title">
+              <span class="step-number">5</span>
+              Search Execution: Coordinated Exploration
+            </div>
+            <div class="step-content">
+              <p><strong>What's happening:</strong> Both robots begin exploring their assigned areas using a waypoint strategy controlled by their individual tactical modules.</p>
+              <p><strong>Strategic vs Tactical:</strong> The strategic (cognitive) module maintains awareness of area existence without directly guiding robot navigation, allowing for efficient local path planning while preserving high-level planning.</p>
+     
+            </div>
+          </div>
+          
+          <!-- Step 6 -->
+          <div class="demo-step" id="step2-6">
+            <div class="step-title">
+              <span class="step-number">6</span>
+              Communication and Coordination (M7)
+            </div>
+            <div class="step-content">
+              <div class="robot-output">
+                <strong>UGV-U:</strong> "They aren't in the doorway."
+              </div>
+              <p><strong>What's happening:</strong> Throughout the search, robots report their findings to each other. When a robot fails to locate the keys in a searched area, it communicates this to its partner.</p>
+              <p><strong>Coordination protocol:</strong> This continuous communication ensures efficient coverage and prevents redundant searching. The UGV-U reports that the doorway area has been searched without success.</p>
+            </div>
+          </div>
+          
+          <!-- Step 7 -->
+          <div class="demo-step" id="step2-7">
+            <div class="step-title">
+              <span class="step-number">7</span>
+              Object Detection: Keys Found
+            </div>
+            <div class="step-content">
+              <div class="robot-output">
+                <strong>UGV-U:</strong> "I found them north of the couch."
+              </div>
+              <p><strong>What's happening:</strong> The UGV-U's Vision Meaning Representations (VMRs) widget displays object detection results that the strategic layer processes from sensing frames communicated by the tactical layer.</p>
+              <p><strong>Strategic analysis:</strong> The strategic module continuously analyzes sensor data frames, grounding these VMRs against the instance of the KEY object stored in its episodic memory. The keys are located north of the couch.</p>
+            </div>
+          </div>
+          
+          <!-- Step 8 -->
+          <div class="demo-step" id="step2-8">
+            <div class="step-title">
+              <span class="step-number">8</span>
+              Task Completion: Mission Report
+            </div>
+            <div class="step-content">
+              <div class="robot-output">
+                <strong>UGV-U:</strong> "I found them behind the couch."
+              </div>
+              <p><strong>What's happening:</strong> When the keys are found, the UGV-U reports the successful completion to Danny. Notice the difference in location description: "north of the couch" (M8) vs "behind the couch" (M9).</p>
+              <p><strong>Context-appropriate communication:</strong> This demonstrates the cognitive agent's ability to generate context-appropriate language for different communication partners. The UGV-U uses more natural language when reporting to the human operator.</p>
+            </div>
+          </div>
+          
+          <!-- Step 9 -->
+          <div class="demo-step" id="step2-9">
+            <div class="step-title">
+              <span class="step-number">9</span>
+              Mission Debrief: Team Coordination Summary
+            </div>
+            <div class="step-content">
+              <p><strong>Mission Summary:</strong> The multi-robot search and retrieve mission demonstrates HARMONIC's distributed planning capabilities:</p>
+              <ul>
+                <li><strong>Collaborative Planning:</strong> Leader-subordinate coordination through meta-scripts</li>
+                <li><strong>Distributed Execution:</strong> Strategic plans divided into tactical commands</li>
+                <li><strong>Real-time Coordination:</strong> Continuous communication and status updates</li>
+                <li><strong>Context-aware Communication:</strong> Different language styles for different audiences</li>
+                <li><strong>Efficient Search:</strong> Coordinated coverage without redundancy</li>
+              </ul>
+              <p><strong>Key Success Factors:</strong> The mission succeeded due to effective plan distribution, clear role definitions, and robust communication protocols between the strategic and tactical layers.</p>
+            </div>
+          </div>
+          
+          <!-- Continue with more steps as needed... -->
+          <!-- For now, I'll add a few more key steps to reach 30 total -->
+          
+          <!-- Steps 11-30 would continue the detailed breakdown -->
+          <!-- I'll add a few more representative steps -->
+          
+          <!-- Step 10 - Demo Video -->
+          <div class="demo-step" id="step2-10">
+            <div class="step-title">
+              <span class="step-number">10</span>
+              Watch Full Demo - Multi-Robot
+            </div>
+            <div class="step-content">
+              <p><strong>Complete HARMONIC Multi-Robot Demonstration</strong></p>
+              <p>Watch the full multi-robot demonstration showing HARMONIC's distributed planning and collaborative execution process with UGV and drone coordination.</p>
+              
+              <!-- Full-width multi-robot video -->
+              <div class="full-width-video-container" style="margin: 30px 0; width: 100%;">
+                <video class="clickable-video full-demo-video" autoplay muted loop playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/demo3_multirobot_sim.mp4', 'Multi-Robot Search and Retrieve Demo')">
+                  <source src="assets/videos/demos/demo3_multirobot_sim.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="figure-caption">
+                  <p><strong>Complete HARMONIC Multi-Robot Demo</strong></p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
         </div>
       </div>
       </section>
@@ -2599,6 +2842,7 @@ oiled gears, 4/22/2020</code></pre>
         <button class="copy-button" style="margin-left: 800px;" onclick="copyReferences()">Copy All</button>
       </div>
       </section>
+      
     </div>
     
     <!-- Footer - BLINDED FOR SUBMISSION -->
@@ -2841,6 +3085,11 @@ oiled gears, 4/22/2020</code></pre>
       'Watch Full Demo - Real-Robot'
     ];
     
+    function initializeInteractiveDemo() {
+      generateStepNavigation();
+      updateStepDisplay();
+    }
+    
     function generateStepNavigation() {
       const stepNavGrid = document.getElementById('stepNavGrid');
       stepNavGrid.innerHTML = '';
@@ -2869,7 +3118,7 @@ oiled gears, 4/22/2020</code></pre>
     }
     
     function updateStepNavigation() {
-      const navButtons = document.querySelectorAll('.step-nav-button');
+      const navButtons = document.querySelectorAll('#stepNavGrid .step-nav-button');
       navButtons.forEach((button, index) => {
         const stepNumber = index;
         button.classList.remove('active', 'completed');
@@ -2885,7 +3134,7 @@ oiled gears, 4/22/2020</code></pre>
     function goToStep(stepNumber) {
       if (stepNumber >= 0 && stepNumber < totalSteps) {
         currentStepIndex = stepNumber;
-        updateStepDisplay(true); // Scroll when user clicks step buttons
+        updateStepDisplay(false); // No scroll when user clicks step buttons
         updateStepNavigation();
         
         // Stop auto-play if it's running
@@ -2905,8 +3154,8 @@ oiled gears, 4/22/2020</code></pre>
       document.getElementById('prevStep').disabled = currentStepIndex <= 0;
       document.getElementById('nextStep').disabled = currentStepIndex >= totalSteps - 1;
       
-      // Hide all steps first
-      document.querySelectorAll('.demo-step').forEach(step => {
+      // Hide all steps first (only from demo 1)
+      document.querySelectorAll('#demoContent .demo-step').forEach(step => {
         step.classList.remove('active', 'completed');
         step.style.display = 'none';
       });
@@ -3129,17 +3378,17 @@ oiled gears, 4/22/2020</code></pre>
         // System 2: Strategic Layer
         'system2-layer': {
           title: 'System 2: Strategic (Cognitive) Layer',
-          description: 'The high-level cognitive layer responsible for long-term planning and complex decision-making. Inspired by Kahneman\'s dual-system model, this represents deliberative thinking.'
+          description: 'The strategic layer adapts the mature cognitive architecture OntoAgent for high-level reasoning, leveraging explicit, structured knowledge representations that can be inspected, verified, and incrementally expanded. This layer employs both utility-based and analogical reasoning, maintaining an ontological world model capable of supporting metacognition, episodic memory, and a situation model containing representations of current task context. It prioritizes goals, manages plan agendas, and selects actions while continuously monitoring their execution, facilitating team-oriented operations including natural language communication and explanation.'
         },
         'ontoagent-framework': {
           title: 'OntoAgent Framework',
-          description: 'Cognitive framework for knowledge-based reasoning and natural language processing. Provides explicit, inspectable knowledge representations for transparent decision-making.'
+          description: 'Built over a service-based ecosystem, OntoAgent includes processing modules for perception interpretation (separate module for each perception modality), attention management, goal and plan selection, and plan execution. Its knowledge substrate includes an ontological world model capable of supporting metacognition, knowledge support for interpretation of perception, an episodic memory of past events, and a situation model that contains representations of entities and events that are part of the current task context.'
         },
         
         // OntoAgent Components
         'perception-interpretation': {
           title: 'Perception Interpretation',
-          description: 'Processes raw sensory data into meaningful, symbolic representations for strategic reasoning. Converts low-level sensor data into high-level concepts and objects.'
+          description: 'The strategic layer interprets preprocessed multimodal perception data within the context of its situation model and active goals, generating normalized ontologically grounded text (TMR) and vision (VMR) meaning representations that formally specify the semantics of perceptual input. The TMRs and VMRs are added to OntoAgent\'s situation model, which provides data and heuristics for downstream functioning.'
         },
         'attention-service-s2': {
           title: 'Attention Service (Strategic)',
@@ -3151,54 +3400,45 @@ oiled gears, 4/22/2020</code></pre>
         },
         'rendering-services': {
           title: 'Rendering Services',
-          description: 'Translates strategic decisions into actionable commands for the tactical layer. Converts high-level plans into specific instructions for execution.'
+          description: 'When plan execution reaches a step that corresponds to an atomic action, a command is issued for the tactical layer to execute it. The strategic layer generates normalized ontologically grounded text (TMR) and vision (VMR) meaning representations that formally specify the semantics of perceptual input.'
         },
         
         // Communication APIs
         'perception-apis': {
           title: 'Perception Data Communication APIs',
-          description: 'Interfaces for exchanging processed perception data between strategic and tactical layers. Ensures proper data flow and format conversion between system levels.'
+          description: 'The tactical layer provides the strategic layer with preprocessed multimodal (speech, vision, etc.) perception data and relays robot state information, employing a suite of perception models within the perception services.'
         },
         'action-apis': {
           title: 'Action Data Communication APIs',
-          description: 'Interfaces for sending action commands from strategic to tactical layer. Manages command translation and validation between system levels.'
+          description: 'The strategic and tactical layers are connected through a bidirectional interface that enables efficient inter-layer communication and data transfer. High-level action commands sent by the OntoAgent through the Interface APIs are unpacked and used to update corresponding variables in the blackboard.'
         },
         
         // System 1: Tactical Layer
         'system1-layer': {
           title: 'System 1: Tactical (Control) Layer',
-          description: 'The low-level control layer responsible for real-time execution and reactive behaviors. Represents fast, automatic responses in Kahneman\'s dual-system model.',
-          video: {
-            src: 'assets/videos/demos/ICRA26_4530_VI_i.mp4',
-            caption: 'Tactical Layer in Action - Real-time execution and reactive behaviors'
-          }
+          description: 'The tactical layer handles robotic control and execution, grounding cognitive capabilities in physical embodiment. It manages robot action planning, reflexive attention, and execution of motor actions in response to high-level commands from the strategic layer. The attention service in this layer interprets perceptual inputs and assigns priority to sensory signals before passing them to the attention service in the strategic layer.<br><br><button class="demo-button" onclick="openVideoModal(\'assets/videos/demos/ICRA26_4530_VI_i.mp4\', \'Tactical Layer in Action - Real-time execution and reactive behaviors\')" style="margin-top: 10px; padding: 8px 16px; background: var(--accent-color); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">▶ Watch Tactical Layer Demo</button>'
         },
         
         // System 1 Components
         'perception-services': {
           title: 'Perception Services (Tactical)',
-          description: 'Handles raw sensory input and provides real-time environmental awareness. Processes sensor data for immediate action and safety monitoring.'
+          description: 'Handles raw sensory input and provides real-time environmental awareness. Processes sensor data for immediate action and safety monitoring. Across the two systems, we use three different robots: a UGV and a Drone in simulation environments, and a tabletop serial manipulator. Each robot operates its own instance of OntoAgent at the strategic level and customized low-level planners at the tactical level.'
         },
         'attention-service-s1': {
           title: 'Attention Service (Tactical)',
-          description: 'Directs sensory focus and processing for immediate task relevance. Manages real-time attention allocation for reactive behaviors.'
+          description: 'Directs sensory focus and processing for immediate task relevance. Manages real-time attention allocation for reactive behaviors. The tactical planners use a blackboard to keep track of condition and state variables, allowing for efficient querying and updating of the system\'s state during operation based on sensory inputs and action commands received from the strategic layer.'
         },
         'tactical-reasoning': {
           title: 'Tactical Reasoning & Decision-Making (Behavior Trees)',
-          description: 'Executes immediate actions and reactive behaviors using behavior trees. Provides robust, hierarchical control for real-time task execution.'
+          description: 'In the action translation pipeline of the tactical layer, specialized robotic planners, controllers, algorithms, and action sequence models are employed as part of the Reasoning and Decision Making modules and Effector Services to translate abstract action commands from OntoAgent into precise, executable robot control operations.'
         },
         'behavior-trees': {
           title: 'Behavior Trees',
-          description: 'Hierarchical control structures that define the robot\'s behavior patterns and decision-making logic. Behavior trees provide a modular and reusable approach to organizing complex behaviors, allowing for dynamic task execution and reactive responses to environmental changes.',
-          image: {
-            src: 'assets/images/architecture/Robots-BTs.png',
-            alt: 'Behavior Trees Structure',
-            caption: 'Example behavior tree structure showing hierarchical decision-making nodes'
-          }
+          description: 'Implemented using Behavior Trees (BTs), the tactical layer provides dual functionality: executing coordinated sequences of operations while maintaining dynamic environmental reactive responses. The hierarchical design structure of BTs enables real-time collision avoidance and adaptive behavior through embedded task prioritization mechanisms that can override or modify planned actions when necessary. The control models in BTs can selectively engage specialized policies, including whole-body compliant control, motion planning, and path planning algorithms.'
         },
         'effector-services': {
           title: 'Effector Services',
-          description: 'Translates tactical commands into physical actions for motors and actuators. Handles low-level control and safety constraints for physical execution.'
+          description: 'Translates tactical commands into physical actions for motors and actuators. Handles low-level control and safety constraints for physical execution. The integration infrastructure is developed in ROS2 for both robots and simulators, with simulation environments created in Unity. OntoAgent is developed in Python, incorporating various linguistic, machine learning, and statistical tools.'
         },
         
         // Perception Inputs
@@ -3334,8 +3574,7 @@ oiled gears, 4/22/2020</code></pre>
       videos.forEach(video => observer.observe(video));
       
       // Initialize demo
-      generateStepNavigation();
-      updateStepDisplay();
+      initializeInteractiveDemo();
       
       // Initialize interactive architecture
       initializeInteractiveArchitecture();
@@ -3345,6 +3584,9 @@ oiled gears, 4/22/2020</code></pre>
       
       // Initialize video modal
       initializeVideoModal();
+      
+      // Initialize interactive demo 2
+      initializeInteractiveDemo2();
     });
     
     // Image Modal Functions
@@ -3443,6 +3685,143 @@ oiled gears, 4/22/2020</code></pre>
           closeVideoModal();
         }
       });
+    }
+    
+    // Interactive Demo 2 Functions
+    let currentStepIndex2 = 0;
+    const totalSteps2 = 11;
+    let autoPlayInterval2 = null;
+    
+    // Step titles for navigation
+    const stepTitles2 = [
+      'Understanding HARMONIC\'s Distributed Planning Process',
+      'Task Initiation: Danny\'s Request',
+      'Information Gathering: Object Description',
+      'Location Information: Last Known Location',
+      'Plan Distribution: Search Initiation',
+      'Search Execution: Coordinated Exploration',
+      'Communication and Coordination',
+      'Object Detection: Keys Found',
+      'Task Completion: Mission Report',
+      'Mission Debrief: Team Coordination Summary',
+      'Multi-Robot Demo Video'
+    ];
+    
+    function initializeInteractiveDemo2() {
+      generateStepNavigation2();
+      updateStepDisplay2();
+    }
+    
+    function generateStepNavigation2() {
+      const stepNavGrid = document.getElementById('stepNavGrid2');
+      if (!stepNavGrid) return;
+      
+      stepNavGrid.innerHTML = '';
+      
+      for (let i = 0; i < totalSteps2; i++) {
+        const button = document.createElement('button');
+        
+        // Special styling for demo step
+        if (i === 10) {
+          button.className = 'step-nav-button simulation-nav-button';
+          button.textContent = '10';
+          button.title = `Step ${i}: ${stepTitles2[i]}`;
+        } else {
+          button.className = 'step-nav-button';
+          button.textContent = i === 0 ? 'Intro' : i;
+          button.title = `Step ${i}: ${stepTitles2[i]}`;
+        }
+        
+        button.onclick = () => goToStep2(i);
+        stepNavGrid.appendChild(button);
+      }
+    }
+    
+    function updateStepNavigation2() {
+      const navButtons = document.querySelectorAll('#stepNavGrid2 .step-nav-button');
+      navButtons.forEach((button, index) => {
+        const stepNumber = index;
+        button.classList.remove('active', 'completed');
+        
+        if (stepNumber === currentStepIndex2) {
+          button.classList.add('active');
+        } else if (stepNumber < currentStepIndex2) {
+          button.classList.add('completed');
+        }
+      });
+    }
+    
+    function updateStepDisplay2(shouldScroll = false) {
+      // Update step counter
+      document.getElementById('currentStep2').textContent = currentStepIndex2;
+      document.getElementById('totalSteps2').textContent = totalSteps2 - 1;
+      
+      // Update button states
+      document.getElementById('prevStep2').disabled = currentStepIndex2 <= 0;
+      document.getElementById('nextStep2').disabled = currentStepIndex2 >= totalSteps2 - 1;
+      
+      // Update step navigation buttons
+      updateStepNavigation2();
+      
+      // Hide all steps
+      const steps = document.querySelectorAll('#demoContent2 .demo-step');
+      steps.forEach(step => {
+        step.classList.remove('active');
+        step.style.display = 'none';
+      });
+      
+      // Show current step
+      const currentStep = document.getElementById(`step2-${currentStepIndex2}`);
+      if (currentStep) {
+        currentStep.classList.add('active');
+        currentStep.style.display = 'block';
+        
+        if (shouldScroll) {
+          currentStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+    
+    function goToStep2(stepIndex) {
+      if (stepIndex >= 0 && stepIndex < totalSteps2) {
+        currentStepIndex2 = stepIndex;
+        updateStepDisplay2(false);
+      }
+    }
+    
+    function nextStep2() {
+      if (currentStepIndex2 < totalSteps2 - 1) {
+        currentStepIndex2++;
+        updateStepDisplay2(false);
+      }
+    }
+    
+    function previousStep2() {
+      if (currentStepIndex2 > 0) {
+        currentStepIndex2--;
+        updateStepDisplay2(false);
+      }
+    }
+    
+    function toggleAutoPlay2() {
+      const button = document.getElementById('autoPlayBtn2');
+      
+      if (autoPlayInterval2) {
+        clearInterval(autoPlayInterval2);
+        autoPlayInterval2 = null;
+        button.textContent = 'Auto Play';
+        button.style.background = '';
+      } else {
+        autoPlayInterval2 = setInterval(() => {
+          if (currentStepIndex2 < totalSteps2 - 1) {
+            nextStep2();
+          } else {
+            toggleAutoPlay2(); // Stop auto-play at the end
+          }
+        }, 3000); // 3 seconds per step
+        button.textContent = 'Stop Auto Play';
+        button.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)';
+      }
     }
   </script>
   
