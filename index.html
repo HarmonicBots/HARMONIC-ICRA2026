@@ -802,6 +802,171 @@
       display: none !important;
     }
     
+    /* Consistent font styling for all demo steps */
+    .demo-step .step-content {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    .demo-step .step-content h4 {
+      color: var(--accent-color);
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    
+    .demo-step .step-content ul {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    
+    .demo-step .step-content li {
+      margin-bottom: 6px;
+      padding-left: 8px;
+    }
+    
+    .demo-step .step-content strong {
+      color: var(--primary-color);
+    }
+    
+    /* Glossary specific styling */
+    .glossary-term {
+      background: white;
+      border-left: 3px solid var(--accent-color);
+      border-radius: 6px;
+      padding: 12px 15px;
+      margin-bottom: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      transition: all 0.2s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .glossary-term:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      border-left-width: 4px;
+    }
+    
+    .glossary-term .glossary-badge {
+      background: var(--accent-color);
+      color: white;
+      border-radius: 3px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    
+    .glossary-term .glossary-content {
+      flex: 1;
+    }
+    
+    .glossary-term .glossary-title {
+      color: var(--primary-color);
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 4px 0;
+      line-height: 1.2;
+    }
+    
+    .glossary-term .glossary-definition {
+      color: var(--text-color);
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    
+    /* Alphabet directory styling */
+    .alphabet-btn {
+      background: white;
+      color: var(--text-color);
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .alphabet-btn:hover {
+      background: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .alphabet-btn.active {
+      background: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    /* Alphabet section headers */
+    .alphabet-section {
+      margin-bottom: 30px;
+    }
+    
+    .alphabet-header {
+      background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    /* References formatting */
+    #references-container ol li {
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+    }
+    
+    #references-container ol li:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Custom scrollbar styling */
+    #references-container::-webkit-scrollbar,
+    #glossary-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    #references-container::-webkit-scrollbar-track,
+    #glossary-container::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+    
+    #references-container::-webkit-scrollbar-thumb,
+    #glossary-container::-webkit-scrollbar-thumb {
+      background: var(--accent-color);
+      border-radius: 4px;
+    }
+    
+    #references-container::-webkit-scrollbar-thumb:hover,
+    #glossary-container::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-color);
+    }
+    
+    /* Firefox scrollbar styling */
+    #references-container,
+    #glossary-container {
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-color) #f1f1f1;
+    }
+    
     .step-number {
       display: inline-block;
       background: var(--accent-color);
@@ -1472,6 +1637,7 @@
                 <li><a href="#evaluation2" class="nav-link">Evaluation-2</a></li>
                 <li><a href="#presentation" class="nav-link">Presentation</a></li>
                 <li><a href="#references" class="nav-link">References</a></li>
+                <li><a href="#glossary" class="nav-link">Glossary</a></li>
             </ul>
             <div class="nav-toggle">
                 <span class="bar"></span>
@@ -1700,24 +1866,36 @@
               <p><strong>Welcome to the HARMONIC Interactive Demo!</strong></p>
               <p>This demonstration shows how HARMONIC processes a real-world scenario: a shipboard maintenance situation where a human reports an engine overheating problem and requests help.</p>
               
-              <h4>What You'll See:</h4>
-              <ul>
-                <li><strong>Natural Language Understanding:</strong> How HARMONIC interprets human speech and creates structured representations</li>
-                <li><strong>Conversation Patterns:</strong> How the system knows what responses are appropriate in different situations</li>
-                <li><strong>Knowledge-Based Reasoning:</strong> How HARMONIC searches its knowledge base to provide informed responses</li>
-                <li><strong>Multi-Step Planning:</strong> How the system breaks down complex tasks into manageable steps</li>
-                <li><strong>Physical Action Integration:</strong> How reasoning connects to actual robot behavior</li>
+              <h4 style="color: var(--accent-color); font-size: 18px; margin-bottom: 15px;">What You'll See:</h4>
+              <ul style="font-size: 14px; line-height: 1.6; margin-bottom: 25px;">
+                <li style="margin-bottom: 6px; padding-left: 8px;"><strong style="color: var(--primary-color);">Natural Language Understanding:</strong> <span style="color: var(--text-color);">The system interprets human utterances through semantic parsing, converting unstructured speech into formal meaning representations (TMRs) grounded in the system's ontological framework</span></li>
+                <li style="margin-bottom: 6px; padding-left: 8px;"><strong style="color: var(--primary-color);">Dialog Management:</strong> <span style="color: var(--text-color);">The system employs discourse protocols and adjacency pair patterns to maintain conversational coherence, selecting contextually appropriate communicative acts based on dialog state and team dynamics</span></li>
+                <li style="margin-bottom: 6px; padding-left: 8px;"><strong style="color: var(--primary-color);">Knowledge-Based Reasoning:</strong> <span style="color: var(--text-color);">The system performs ontological inference operations, traversing hierarchical knowledge structures to retrieve relevant facts, scripts, and procedural knowledge for decision-making</span></li>
+                <li style="margin-bottom: 6px; padding-left: 8px;"><strong style="color: var(--primary-color);">Hierarchical Task Planning:</strong> <span style="color: var(--text-color);">The system decomposes high-level goals into executable action sequences through strategic-to-tactical plan refinement, maintaining causal dependencies and temporal constraints</span></li>
+                <li style="margin-bottom: 6px; padding-left: 8px;"><strong style="color: var(--primary-color);">Perception-Action Coupling:</strong> <span style="color: var(--text-color);">The system integrates symbolic reasoning outputs with sensorimotor control commands, translating cognitive decisions into parameterized robot behaviors through the dual-layer architecture</span></li>
               </ul>
-              
-              <h4>Key Concepts:</h4>
-              <ul>
-                <li><strong>GMR (Graphical Meaning Representation):</strong> Structured representations of meaning that HARMONIC uses internally</li>
-                <li><strong>Adjacency Pairs:</strong> Conversation patterns that help HARMONIC know what to do next</li>
-                <li><strong>Ontology:</strong> HARMONIC's knowledge base containing information about objects, relationships, and procedures</li>
-                <li><strong>Plan Status:</strong> How HARMONIC tracks and manages multiple tasks simultaneously</li>
-              </ul>
-              
+             
+             
               <p><strong>Ready to explore?</strong> Click "Next" or any step number above to begin!</p>
+              
+              <!-- Setup Images -->
+              <div class="image-grid-container" style="margin: 30px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+                <!-- Simulation Setup Image -->
+                <div class="image-container" style="text-align: center;">
+                  <img src="assets/images/results/Sim_snippet.jpg" alt="Shipboard layout for simulations" class="clickable-image" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); cursor: pointer;" onclick="openImageModal('assets/images/results/Sim_snippet.jpg', 'Shipboard layout for simulations', 'Shipboard layout for simulations')">
+                  <div class="image-caption" style="font-size: 14px; color: var(--text-color);">
+                    <p><strong>Shipboard layout for simulations</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                  </div>
+                </div>
+                
+                <!-- Robot Setup Image -->
+                <div class="image-container" style="text-align: center;">
+                  <img src="assets/images/results/Rob_Snippet.jpg" alt="Tabletop setup emulating the shipboard task" class="clickable-image" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); cursor: pointer;" onclick="openImageModal('assets/images/results/Rob_Snippet.jpg', 'Tabletop setup emulating the shipboard task', 'Tabletop setup emulating the shipboard task')">
+                  <div class="image-caption" style="font-size: 14px; color: var(--text-color);">
+                    <p><strong>Tabletop setup emulating the shipboard task</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -2299,12 +2477,12 @@ oiled gears, 4/22/2020</code></pre>
                 
                 <!-- Search Robot Video -->
                 <div class="video-container" style="text-align: center;">
-                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Search_Robot.mp4', 'Table top robot searching for the thermostat on the shelf.')">
+                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Search_Robot.mp4', 'Tabletop robot searching for the thermostat on the shelf.')">
                     <source src="assets/videos/demos/Search_Robot.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                   <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
-                    <p><strong>Table top robot searching for the thermostat on the shelf.</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                    <p><strong>Tabletop robot searching for the thermostat on the shelf.</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
                 </div>
               </div>
@@ -2408,23 +2586,23 @@ oiled gears, 4/22/2020</code></pre>
               <div class="video-grid-container" style="margin: 30px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
                 <!-- Pickup Simulation Video -->
                 <div class="video-container" style="text-align: center;">
-                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; object-position: bottom; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Pickup_Sim.mp4', 'Pickup Simulation Demo')">
+                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; object-position: bottom; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Pickup_Sim.mp4', 'UGV executing pickup sequence in simulation')">
                     <source src="assets/videos/demos/Pickup_Sim.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                   <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
-                    <p><strong>Pickup Simulation</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                    <p><strong>UGV executing pickup sequence in simulation</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
                 </div>
                 
                 <!-- Pickup Robot Video -->
                 <div class="video-container" style="text-align: center;">
-                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Pickup_Robot.mp4', 'Pickup Robot Demo')">
+                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Pickup_Robot.mp4', 'Tabletop robot executing the pickup sequence')">
                     <source src="assets/videos/demos/Pickup_Robot.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                   <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
-                    <p><strong>Pickup Robot</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                    <p><strong>Tabletop robot executing the pickup sequence</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
                 </div>
               </div>
@@ -2450,23 +2628,23 @@ oiled gears, 4/22/2020</code></pre>
                 <div class="video-grid-container" style="margin: 30px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
                   <!-- Return Simulation Video -->
                   <div class="video-container" style="text-align: center;">
-                    <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Return_Sim.mp4', 'Return Simulation Demo')">
+                    <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; object-position: top; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Return_Sim.mp4', 'UGV returning thermostat to Danny in Simulation')">
                       <source src="assets/videos/demos/Return_Sim.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                     <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
-                      <p><strong>Return Simulation</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                      <p><strong>UGV returning thermostat to Danny in Simulation</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                     </div>
                   </div>
                   
                   <!-- Return Robot Video -->
                   <div class="video-container" style="text-align: center;">
-                    <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Return_Robot.mp4', 'Return Robot Demo')">
+                    <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Return_Robot.mp4', 'Tabletop robot returning thermostat to drop area')">
                       <source src="assets/videos/demos/Return_Robot.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                     <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
-                      <p><strong>Return Robot</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                      <p><strong>Tabletop robot returning thermostat to drop area</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                     </div>
                   </div>
                 </div>
@@ -2498,23 +2676,23 @@ oiled gears, 4/22/2020</code></pre>
               <div class="video-grid-container" style="margin: 30px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
                 <!-- Drop Simulation Video -->
                 <div class="video-container" style="text-align: center;">
-                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; object-position: bottom; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Drop_Sim.mp4', 'Drop Simulation Demo')">
+                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; object-position: bottom; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Drop_Sim.mp4', 'UGV drops thermostat after return')">
                     <source src="assets/videos/demos/Drop_Sim.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                   <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
-                    <p><strong>Drop Simulation</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                    <p><strong>UGV drops thermostat after return</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
                 </div>
                 
                 <!-- Drop Robot Video -->
                 <div class="video-container" style="text-align: center;">
-                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Drop_Robot.mp4', 'Drop Robot Demo')">
+                  <video class="clickable-video" autoplay muted loop playsinline style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);" onclick="openVideoModal('assets/videos/demos/Drop_Robot.mp4', 'Tabletop robot drops thermostat in drop area')">
                     <source src="assets/videos/demos/Drop_Robot.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                   <div class="video-caption" style="font-size: 14px; color: var(--text-color);">
-                    <p><strong>Drop Robot</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
+                    <p><strong>Tabletop robot drops thermostat in drop area</strong> <em style="color: var(--accent-color); font-size: 0.9em;">(Click to zoom)</em></p>
                   </div>
                 </div>
               </div>
@@ -2635,14 +2813,6 @@ oiled gears, 4/22/2020</code></pre>
                 <li><strong>Multi-Robot Coordination:</strong> How UGV and drone work together in search missions</li>
                 <li><strong>Behavior Tree Integration:</strong> How tactical layers execute collaborative plans</li>
                 <li><strong>Real-time Communication:</strong> How robots coordinate and report findings</li>
-              </ul>
-              
-              <h4>Key Concepts:</h4>
-              <ul>
-                <li><strong>COLLABORATIVE-ACTIVITY Script:</strong> Meta-script for team coordination</li>
-                <li><strong>SEARCH-FOR-LOST-OBJECT:</strong> Domain-specific script for search missions</li>
-                <li><strong>Behavior Trees (BTs):</strong> Tactical layer control structures</li>
-                <li><strong>Vision Meaning Representations (VMRs):</strong> Vision Meaning Representations</li>
               </ul>
               
               <p><strong>Ready to explore?</strong> Click "Next" or any step number above to begin!</p>
@@ -2864,7 +3034,7 @@ oiled gears, 4/22/2020</code></pre>
       <!-- 3 Minute Presentation Section -->
       <section id="presentation" style="margin: 40px 0; text-align: center;">
         <h2 style="color: var(--primary-color); font-size: 28px; font-weight: 600; margin-bottom: 20px;">3 Minute Presentation</h2>
-        <div class="video-container" style="max-width: 800px; margin: 0 auto;">
+        <div class="video-container" style="max-width: 1000px; margin: 0 auto;">
           <video controls muted autoplay loop style="width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);">
             <source src="assets/videos/demos/ICRA26_4530_VI_i.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -2886,23 +3056,17 @@ oiled gears, 4/22/2020</code></pre>
       
       <hr class="section-divider">
       
-      <!-- Acknowledgments Section - BLINDED FOR SUBMISSION -->
-      <h2>Acknowledgments</h2>
-      <div class="placeholder" style="background-color: #fff3cd; border-color: #ffeaa7; color: #856404;">
-        <strong>Acknowledgments removed for double-blind submission</strong>
-        <br><br>
-        Funding information and acknowledgments will be added after acceptance.
-      </div>
-      
-      <!-- References Section - TO BE CUSTOMIZED -->
-      <section id="references">
+      <!-- References and Glossary Container -->
+      <div style="display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap;">
+        
+        <!-- References Section -->
+        <section id="references" style="flex: 1; min-width: 300px;">
       <h2>References <button id="toggle-references" class="citation-button" style="margin-left: 15px; font-size: 14px;">
-        <i class="fas fa-chevron-down"></i> Show References
+        <i class="fas fa-chevron-up"></i> Hide References
       </button></h2>
       
-      <div id="references-container" class="citation-content" style="display: none; max-width: 100%; margin-top: 20px;">
-        <div class="placeholder">
-          <ol style="padding-left: 25px; text-align: left; line-height: 1.6; font-size: 14px; color: var(--text-color);">
+      <div id="references-container" style="display: block; max-width: 100%; max-height:560px; margin-top: 15px; background: var(--background-color); border-radius: 8px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); overflow-y: auto;">
+        <ol style="padding-left: 20px; text-align: left; line-height: 1.4; font-size: 13px; color: var(--text-color); margin: 0; list-style-position: outside;">
             <li>Y. Tong, H. Liu, and Z. Zhang, "Advancements in humanoid robots: A comprehensive review and future prospects," <em>IEEE/CAA Journal of Automatica Sinica</em>, vol. 11, no. 2, pp. 301–328, 2024.</li>
             
             <li>B. Porter, "The problems with humanoid robots," 5 2024. [Online]. Available: https://medium.com/@bp64302/the-problems-with-humanoid-robots-9d8684d62008</li>
@@ -2978,11 +3142,585 @@ oiled gears, 4/22/2020</code></pre>
             <li>J. G. Trafton, L. M. Hiatt, A. M. Harrison, I. Franklin P. Tamborello, S. S. Khemlani, and A. C. Schultz, "Act-r/e: An embodied cognitive architecture for human–robot interaction," <em>Journal of Human-Robot Interaction</em>, vol. 2, no. 1, pp. 30–55, 2013. [Online]. Available: https://doi.org/10.5898/JHRI.2.1.Trafton</li>
             
             <li>M. Scheutz, R. Cantrell, and P. Schermerhorn, "Toward humanlike task-based dialogue processing for human robot interaction," <em>AI Magazine</em>, vol. 32, no. 4, pp. 77–84, 2011.</li>
-          </ol>
+        </ol>
+        <div style="text-align: right; margin-top: 15px;">
+          <button class="copy-button" onclick="copyReferences()" style="background: var(--accent-color); color: white; border: none; border-radius: 6px; padding: 8px 16px; font-size: 13px; cursor: pointer; transition: all 0.2s ease;">Copy All</button>
         </div>
-        <button class="copy-button" style="margin-left: 800px;" onclick="copyReferences()">Copy All</button>
       </div>
       </section>
+      
+        <!-- Glossary Section -->
+        <section id="glossary" style="flex: 1; min-width: 310px;">
+      <h2>Glossary <button id="toggle-glossary" class="citation-button" style="margin-left: 15px; font-size: 14px;">
+        <i class="fas fa-chevron-up"></i> Hide Glossary
+      </button></h2>
+      
+      <!-- Search Box - Outside scrollable area -->
+      <div style="margin: 15px 0; text-align: center;">
+        <input type="text" id="glossary-search" placeholder="🔍 Search glossary terms..." 
+               style="width: 70%; max-width: 400px; padding: 12px 18px; border: 2px solid var(--accent-color); border-radius: 20px; font-size: 15px; background: white; color: var(--text-color); box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+      </div>
+      
+      <!-- Alphabet Directory - Outside scrollable area -->
+      <div style="margin-bottom: 15px; text-align: center;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 600px; margin: 0 auto;">
+          <button class="alphabet-btn" data-letter="all" style="background: var(--accent-color); color: white; border: none; border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">All</button>
+          <button class="alphabet-btn" data-letter="a" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">A</button>
+          <button class="alphabet-btn" data-letter="b" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">B</button>
+          <button class="alphabet-btn" data-letter="c" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">C</button>
+          <button class="alphabet-btn" data-letter="d" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">D</button>
+          <button class="alphabet-btn" data-letter="e" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">E</button>
+          <button class="alphabet-btn" data-letter="g" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">G</button>
+          <button class="alphabet-btn" data-letter="h" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">H</button>
+          <button class="alphabet-btn" data-letter="l" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">L</button>
+          <button class="alphabet-btn" data-letter="m" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">M</button>
+          <button class="alphabet-btn" data-letter="o" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">O</button>
+          <button class="alphabet-btn" data-letter="p" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">P</button>
+          <button class="alphabet-btn" data-letter="r" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">R</button>
+          <button class="alphabet-btn" data-letter="s" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">S</button>
+          <button class="alphabet-btn" data-letter="t" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">T</button>
+          <button class="alphabet-btn" data-letter="v" style="background: white; color: var(--text-color); border: 2px solid var(--border-color); border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">V</button>
+        </div>
+      </div>
+      
+      <div id="glossary-container" style="display: block; max-width: 100%; max-height: 405px; background: var(--background-color); border-radius: 12px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow-y: auto;">
+        
+        <!-- Glossary Content -->
+        <div id="glossary-content" style="max-width: 900px; margin: 0 auto;">
+          
+          <!-- A Section -->
+          <div class="alphabet-section" data-letter="a">
+            <div class="alphabet-header">A</div>
+            
+            <div class="glossary-term" data-term="action meaning representation amr">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">A</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">AMR (Action Meaning Representation)</h4>
+                    <p class="glossary-definition">Semantic representations specifying the content of actions to be executed, generated by the decision-making service before being rendered into executable commands.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="action data communication apis">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">A</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Action Data Communication APIs</h4>
+                    <p class="glossary-definition">The strategic and tactical layers are connected through a bidirectional interface that enables efficient inter-layer communication and data transfer. High-level action commands sent by the OntoAgent through the Interface APIs are unpacked and used to update corresponding variables in the blackboard.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="action outputs">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">A</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Action Outputs</h4>
+                    <p class="glossary-definition">Physical and communicative outputs generated by the system. Represents the system's ability to interact with and affect the environment.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="actuation and motor control policies">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">A</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Actuation and Motor Control Policies</h4>
+                    <p class="glossary-definition">Specific rules and algorithms for controlling physical outputs. Implements safety constraints and control policies for physical actions.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="attention service">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">A</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Attention Service</h4>
+                    <p class="glossary-definition">Focuses cognitive resources on relevant information for strategic decision-making and directs sensory focus for immediate task relevance. Manages information filtering and prioritization at both cognitive and tactical levels.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="actionability assessment">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">A</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Actionability Assessment</h4>
+                    <p class="glossary-definition">The process of determining whether an agent has sufficient understanding of a situation to proceed with action despite potential incomplete information.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="adjacency pairs">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">A</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Adjacency Pairs</h4>
+                    <p class="glossary-definition">Discourse-level action-response patterns governing turn-taking behaviors in dialog (e.g., request-compliance, question-answer, proposal-acceptance sequences).</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- B Section -->
+          <div class="alphabet-section" data-letter="b">
+            <div class="alphabet-header">B</div>
+            
+            <div class="glossary-term" data-term="behavior trees bts" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">B</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Behavior Trees (BTs)</h4>
+                    <p class="glossary-definition">Hierarchical structures in the tactical layer that execute operations with priority ordering, enabling reactive responses while maintaining planned behavior.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="bidirectional interface" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">B</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Bidirectional Interface</h4>
+                    <p class="glossary-definition">The communication channel between strategic and tactical layers enabling data transfer and command execution across the dual-control architecture.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- C Section -->
+          <div class="alphabet-section" data-letter="c">
+            <div class="alphabet-header">C</div>
+            
+            <div class="glossary-term" data-term="collaborative activity script" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">C</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Collaborative-Activity Script</h4>
+                    <p class="glossary-definition">A meta-script that helps agents operating in teams organize themselves to accomplish shared goals, with different versions for team leaders and subordinates.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="common ground" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">C</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Common Ground</h4>
+                    <p class="glossary-definition">Shared understanding between team members about goals, plans, and situational awareness, essential for effective collaboration.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="communicative acts" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">C</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Communicative Acts</h4>
+                    <p class="glossary-definition">The intended function or purpose of an utterance (broader than speech acts as it includes non-linguistic communication), such as requests, assertions, or questions.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- D Section -->
+          <div class="alphabet-section" data-letter="d">
+            <div class="alphabet-header">D</div>
+            
+            <div class="glossary-term" data-term="discourse relations" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">D</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Discourse Relations</h4>
+                    <p class="glossary-definition">Semantic relationships between propositions in dialog turns that may be explicit or inferred, important for assessing actionability.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- E Section -->
+          <div class="alphabet-section" data-letter="e">
+            <div class="alphabet-header">E</div>
+            
+            <div class="glossary-term" data-term="episodic memory" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">E</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Episodic Memory</h4>
+                    <p class="glossary-definition">Long-term storage of remembered instances of world objects, events, and past processing experiences, enabling agents to leverage past experiences for future decision-making.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="explainability" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">E</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Explainability</h4>
+                    <p class="glossary-definition">The system's ability to provide transparent, human-understandable explanations of its reasoning, decisions, and actions through traces of cognitive processing.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- G Section -->
+          <div class="alphabet-section" data-letter="g">
+            <div class="alphabet-header">G</div>
+            
+            <div class="glossary-term" data-term="gmr grounded meaning representation" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">G</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">GMR (Grounded Meaning Representation)</h4>
+                    <p class="glossary-definition">Intermediate semantic specifications for language generation, encoding communicative content grounded in ontological concepts prior to surface realization through the natural language generator.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="grounding" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">G</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Grounding</h4>
+                    <p class="glossary-definition">The process of connecting symbolic representations to physical world entities, perceptual data, or episodic memory instances (indicated by # indices in representations).</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- H Section -->
+          <div class="alphabet-section" data-letter="h">
+            <div class="alphabet-header">H</div>
+            
+            <div class="glossary-term" data-term="harmonic human ai robotic team member" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">H</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">HARMONIC (Human-AI Robotic Team Member Operating with Natural Intelligence and Communication)</h4>
+                    <p class="glossary-definition">A dual-control cognitive-robotic architecture that integrates strategic (cognitive) level decision-making with tactical (robotic) level control, enabling robots to function as trusted teammates in human-robot teams through transparent reasoning and natural language communication.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- L Section -->
+          <div class="alphabet-section" data-letter="l">
+            <div class="alphabet-header">L</div>
+            
+            <div class="glossary-term" data-term="leia language endowed intelligent agent" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">L</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">LEIA (Language-Endowed Intelligent Agent)</h4>
+                    <p class="glossary-definition">Neurosymbolic, multimodal cognitive-robotic systems implemented in the HARMONIC architecture that can interpret experiences, reason, and learn using ontologically-grounded knowledge.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- M Section -->
+          <div class="alphabet-section" data-letter="m">
+            <div class="alphabet-header">M</div>
+            
+            <div class="glossary-term" data-term="metacognitive reasoning" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">M</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Metacognitive Reasoning</h4>
+                    <p class="glossary-definition">Self-monitoring capabilities enabling introspection of internal states, team member modeling (mindreading), and dynamic strategy adjustment based on situational assessment.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="mindreading" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">M</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Mindreading</h4>
+                    <p class="glossary-definition">The metacognitive capability of modeling teammates' mental states, beliefs, capabilities, and intentions to enable effective collaboration.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- O Section -->
+          <div class="alphabet-section" data-letter="o">
+            <div class="alphabet-header">O</div>
+            
+            <div class="glossary-term" data-term="ontoagent" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">O</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">OntoAgent</h4>
+                    <p class="glossary-definition">The cognitive architecture incorporated in the strategic layer, responsible for semantic interpretation, attention management, goal-setting, sophisticated planning, and addressing unexpected challenges in interpretable ways.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="ontograph" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">O</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">OntoGraph</h4>
+                    <p class="glossary-definition">A knowledge base API providing unified format for representing and accessing knowledge across the system, supporting inheritance, flexible organization into "spaces," and efficient querying.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="ontology" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">O</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Ontology</h4>
+                    <p class="glossary-definition">A hierarchical knowledge repository containing formalized representations of entities (concepts), relationships, properties, and procedural schemas (scripts) that serve as the semantic foundation for agent reasoning.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- P Section -->
+          <div class="alphabet-section" data-letter="p">
+            <div class="alphabet-header">P</div>
+            
+            <div class="glossary-term" data-term="perception interpretation" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">P</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Perception Interpretation</h4>
+                    <p class="glossary-definition">The process of converting multimodal sensory inputs (speech, vision, haptic) into ontologically-grounded meaning representations for unified reasoning.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="perception data communication apis">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">P</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Perception Data Communication APIs</h4>
+                    <p class="glossary-definition">The tactical layer provides the strategic layer with preprocessed multimodal (speech, vision, etc.) perception data and relays robot state information, employing a suite of perception models within the perception services.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="perception inputs">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">P</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Perception Inputs</h4>
+                    <p class="glossary-definition">Various sensory data streams feeding into the system. Provides the raw information needed for environmental understanding and decision-making.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="perception services tactical">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">P</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Perception Services (Tactical)</h4>
+                    <p class="glossary-definition">Handles raw sensory input and provides real-time environmental awareness. Processes sensor data for immediate action and safety monitoring. Across the two systems, we use three different robots: a UGV and a Drone in simulation environments, and a tabletop serial manipulator. Each robot operates its own instance of OntoAgent at the strategic level and customized low-level planners at the tactical level.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="perception and interpretation">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">P</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Perception and Interpretation</h4>
+                    <p class="glossary-definition">Low-level processing for environmental sensing and map creation. Handles SLAM, object detection, and spatial understanding.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="plans" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">P</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Plans</h4>
+                    <p class="glossary-definition">Instances of scripts with parameter values set for specific situations, executed through the goal and plan agenda.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="preconditions" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">P</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Preconditions</h4>
+                    <p class="glossary-definition">Requirements that must be satisfied before a plan can be executed, checked and resolved during plan instantiation.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- R Section -->
+          <div class="alphabet-section" data-letter="r">
+            <div class="alphabet-header">R</div>
+            
+            <div class="glossary-term" data-term="reference resolution" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">R</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Reference Resolution</h4>
+                    <p class="glossary-definition">True resolution of referring expressions to specific instances in episodic memory, distinguished from textual coreference resolution.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- S Section -->
+          <div class="alphabet-section" data-letter="s">
+            <div class="alphabet-header">S</div>
+            
+            <div class="glossary-term" data-term="scripts" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">S</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Scripts</h4>
+                    <p class="glossary-definition">Complex events or procedural knowledge recorded as sequences of events with coreferenced participants and props, representing how typical actions unfold.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="short horizon plans">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">S</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Short Horizon Plans</h4>
+                    <p class="glossary-definition">Tactical plans for immediate future actions, often derived from strategic goals. Bridges the gap between high-level planning and immediate execution.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="strategic reasoning decision making">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">S</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Strategic Reasoning & Decision-Making</h4>
+                    <p class="glossary-definition">Generates high-level plans and makes decisions based on long-term goals and knowledge. Handles complex reasoning about goals, constraints, and trade-offs.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="semantic memory" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">S</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Semantic Memory</h4>
+                    <p class="glossary-definition">Long-term storage of generic knowledge about types of events and objects, distinct from specific instances stored in episodic memory.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="situation model" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">S</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Situation Model</h4>
+                    <p class="glossary-definition">Working memory containing currently active concept instances and representations of entities and events that are part of the current task context.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="strategic layer" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">S</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Strategic Layer</h4>
+                    <p class="glossary-definition">The cognitive component responsible for high-level decision-making, planning, perception interpretation, attention management, and goal selection. Implements System 2 (slow, deliberative reasoning) processing.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- T Section -->
+          <div class="alphabet-section" data-letter="t">
+            <div class="alphabet-header">T</div>
+            
+            <div class="glossary-term" data-term="tactical layer" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">T</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Tactical Layer</h4>
+                    <p class="glossary-definition">The robotic control component responsible for low-level robot control, execution of motor actions, reflexive attention, sensor processing, and reactive behaviors. Implements System 1 (fast, reflexive) processing.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="tactical reasoning decision making">
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">T</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Tactical Reasoning & Decision-Making</h4>
+                    <p class="glossary-definition">In the action translation pipeline of the tactical layer, specialized robotic planners, controllers, algorithms, and action sequence models are employed as part of the Reasoning and Decision Making modules and Effector Services to translate abstract action commands from OntoAgent into precise, executable robot control operations.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="team leader" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">T</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">Team Leader</h4>
+                    <p class="glossary-definition">The robot designated to manage interactions with human operators, select domain scripts, resolve preconditions, and coordinate with subordinate robots.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="glossary-term" data-term="tmr text meaning representation" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">T</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">TMR (Text Meaning Representation)</h4>
+                    <p class="glossary-definition">Ontologically-grounded semantic structures encoding interpreted linguistic input, preserving speaker intent, propositional content, and pragmatic markers.</p>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          
+          <!-- V Section -->
+          <div class="alphabet-section" data-letter="v">
+            <div class="alphabet-header">V</div>
+            
+            <div class="glossary-term" data-term="vmr visual meaning representation" >
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                  <div class="glossary-badge">V</div>
+                  <div class="glossary-content">
+                    <h4 class="glossary-title">VMR (Visual Meaning Representation)</h4>
+                    <p class="glossary-definition">Ontologically-grounded interpretations of visual perceptual data, unifying multimodal sensory inputs into symbolic knowledge structures similar in form to TMRs.</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+            
+        </div>
+        </section>
+        
+      </div>
+      
+      <hr class="section-divider">
+      
+      <!-- Acknowledgments Section - BLINDED FOR SUBMISSION -->
+      <h2>Acknowledgments</h2>
+      <div class="placeholder" style="background-color: #fff3cd; border-color: #ffeaa7; color: #856404;">
+        <strong>Acknowledgments removed for double-blind submission</strong>
+        <br><br>
+        Funding information and acknowledgments will be added after acceptance.
+      </div>
       
     </div>
     
@@ -3157,6 +3895,8 @@ oiled gears, 4/22/2020</code></pre>
     document.addEventListener('DOMContentLoaded', function() {
       const toggleButton = document.getElementById('toggle-references');
       const referencesContainer = document.getElementById('references-container');
+      const glossaryContainer = document.getElementById('glossary-container');
+      const toggleGlossaryButton = document.getElementById('toggle-glossary');
       
       toggleButton.addEventListener('click', function() {
         if (referencesContainer.style.display === 'block') {
@@ -3166,6 +3906,163 @@ oiled gears, 4/22/2020</code></pre>
           referencesContainer.style.display = 'block';
           toggleButton.innerHTML = '<i class="fas fa-chevron-up"></i> Hide References';
         }
+      });
+      
+      // Toggle glossary visibility
+      toggleGlossaryButton.addEventListener('click', function() {
+        if (glossaryContainer.style.display === 'block') {
+          glossaryContainer.style.display = 'none';
+          toggleGlossaryButton.innerHTML = '<i class="fas fa-chevron-down"></i> Show Glossary';
+        } else {
+          glossaryContainer.style.display = 'block';
+          toggleGlossaryButton.innerHTML = '<i class="fas fa-chevron-up"></i> Hide Glossary';
+        }
+      });
+      
+      // Glossary search functionality
+      const glossarySearch = document.getElementById('glossary-search');
+      const glossaryTerms = document.querySelectorAll('.glossary-term');
+      
+      if (glossarySearch) {
+        glossarySearch.addEventListener('input', function() {
+          const searchTerm = this.value.toLowerCase().trim();
+          const alphabetSections = document.querySelectorAll('.alphabet-section');
+          
+          // If search is active, show all sections and filter terms
+          if (searchTerm.length > 0) {
+            alphabetSections.forEach(function(section) {
+              section.style.display = 'block';
+            });
+            
+            glossaryTerms.forEach(function(term) {
+              const termData = term.getAttribute('data-term').toLowerCase();
+              const termText = term.textContent.toLowerCase();
+              
+              if (termData.includes(searchTerm) || termText.includes(searchTerm)) {
+                term.style.display = 'block';
+                term.style.marginBottom = '8px';
+              } else {
+                term.style.display = 'none';
+                term.style.marginBottom = '0px';
+              }
+            });
+          } else {
+            // If search is empty, restore alphabet filtering
+            filterByAlphabet(currentAlphabetFilter);
+          }
+        });
+      }
+      
+      // Alphabet directory functionality
+      let currentAlphabetFilter = 'all';
+      const alphabetButtons = document.querySelectorAll('.alphabet-btn');
+      
+      alphabetButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          const letter = this.getAttribute('data-letter');
+          
+          // Update active button
+          alphabetButtons.forEach(function(btn) {
+            btn.classList.remove('active');
+            btn.style.background = 'white';
+            btn.style.color = 'var(--text-color)';
+            btn.style.borderColor = 'var(--border-color)';
+          });
+          
+          this.classList.add('active');
+          this.style.background = 'var(--accent-color)';
+          this.style.color = 'white';
+          this.style.borderColor = 'var(--accent-color)';
+          
+          // Filter glossary
+          filterByAlphabet(letter);
+          currentAlphabetFilter = letter;
+          
+          // Clear search if filtering by alphabet
+          if (glossarySearch) {
+            glossarySearch.value = '';
+          }
+        });
+      });
+      
+      // Function to filter glossary by alphabet
+      function filterByAlphabet(letter) {
+        const alphabetSections = document.querySelectorAll('.alphabet-section');
+        const glossaryTerms = document.querySelectorAll('.glossary-term');
+        
+        if (letter === 'all') {
+          // Show all sections and terms
+          alphabetSections.forEach(function(section) {
+            section.style.display = 'block';
+          });
+          glossaryTerms.forEach(function(term) {
+            term.style.display = 'block';
+            term.style.marginBottom = '8px';
+          });
+        } else {
+          // Hide all sections first
+          alphabetSections.forEach(function(section) {
+            section.style.display = 'none';
+          });
+          
+          // Show only the selected letter section
+          const targetSection = document.querySelector(`.alphabet-section[data-letter="${letter}"]`);
+          if (targetSection) {
+            targetSection.style.display = 'block';
+          }
+          
+          // Show all terms in the selected section
+          glossaryTerms.forEach(function(term) {
+            term.style.display = 'block';
+            term.style.marginBottom = '8px';
+          });
+        }
+      }
+      
+      // Hover effects are now handled by CSS
+      
+      // Auto-expand sections when navigation links are clicked
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          
+          // Handle glossary link
+          if (href === '#glossary') {
+            e.preventDefault();
+            // Use existing variables
+            
+            // Scroll to glossary section
+            document.getElementById('glossary').scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+            
+            // Auto-expand glossary if it's collapsed
+            if (glossaryContainer.style.display === 'none') {
+              glossaryContainer.style.display = 'block';
+              toggleGlossaryButton.innerHTML = '<i class="fas fa-chevron-up"></i> Hide Glossary';
+            }
+          }
+          
+          // Handle references link
+          if (href === '#references') {
+            e.preventDefault();
+            // Use existing variables
+            
+            // Scroll to references section
+            document.getElementById('references').scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+            
+            // Auto-expand references if it's collapsed
+            if (referencesContainer.style.display === 'none' || referencesContainer.style.display === '') {
+              referencesContainer.style.display = 'block';
+              toggleReferencesButton.innerHTML = '<i class="fas fa-chevron-up"></i> Hide References';
+            }
+          }
+        });
       });
       
       // Generate citation formats on page load
