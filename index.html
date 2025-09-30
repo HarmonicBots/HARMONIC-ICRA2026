@@ -171,7 +171,7 @@
     
     .architecture-hotspot {
       position: absolute;
-      background: #fff;
+      background: #ffd700;
       border: 2px solid #000;
       border-radius: 50%;
       cursor: pointer;
@@ -184,13 +184,13 @@
     }
     
     .architecture-hotspot:hover {
-      background: #fff;
+      background: #ffff00;
       border-color: #000;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
     }
     
     .architecture-hotspot.active {
-      background: #fff;
+      background: #ffa500;
       border-color: #000;
       box-shadow: 0 0 25px rgba(255, 0, 0, 1);
     }
@@ -377,7 +377,7 @@
       flex: 1;
       min-width: 300px;
       max-width: 400px;
-      background: linear-gradient(135deg, rgba(248, 249, 250, 0.95), rgba(255, 255, 255, 0.95));
+      background: linear-gradient(135deg, rgba(253, 253, 233, 0.95), rgba(253, 253, 233, 0.95));
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 20px;
@@ -396,7 +396,7 @@
       font-weight: 600;
       margin: 0 0 12px 0;
       padding-bottom: 8px;
-      border-bottom: 2px solid var(--accent-color);
+      border-bottom: 2px solid var(--text-color);
     }
     
     .architecture-info-panel p {
@@ -1309,18 +1309,22 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          max-width: 90%;
-          max-height: 90%;
+          max-width: 75%;
+          max-height: 75%;
           background: white;
           border-radius: 12px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
           overflow: hidden;
+          display: flex;
+          flex-direction: column;
         }
         
         .image-modal img {
           width: 100%;
           height: auto;
           display: block;
+          max-height: 60vh;
+          object-fit: contain;
         }
         
         .image-modal-caption {
@@ -3439,19 +3443,19 @@ oiled gears, 4/22/2020</code></pre>
         // External Top Blocks - Long-Horizon Planning
         'long-horizon-planning': {
           title: 'Long-Horizon Planning',
-          description: 'High-level strategic planning capabilities that handle complex, long-term goals and multi-step task sequences. Provides the foundation for sophisticated decision-making over extended time horizons. Maintains persistent understanding of the environment and agent state over extended periods, tracking changes and providing historical awareness for planning. Breaks down complex goals into manageable sub-tasks and action sequences, creating structured plans that can be executed by lower-level systems. Adapts and re-plans in response to unexpected events or changes in the environment, ensuring system resilience and adaptability to dynamic conditions. Enables the system to handle unforeseen circumstances and learn new behaviors, providing flexibility for dealing with previously unencountered scenarios.'
+          description: 'Involves high-level strategic planning for complex, long-term goals and multi-step tasks. Supports informed decision-making over extended time horizons by maintaining awareness of the environment and agent state. Breaks down large objectives into manageable sub-tasks and sequences that lower-level systems can execute. Adapts plans in response to unexpected events, ensuring resilience and flexibility. Learns new behaviors to handle unforeseen scenarios, extending capability beyond predefined conditions.'
         },
         
         // Metacognition
         'metacognition': {
           title: 'Metacognition',
-          description: 'Self-monitoring and self-regulation of cognitive processes. Enables the system to reflect on its own thinking and decision-making capabilities. Includes the system\'s understanding of its own capabilities, limitations, and internal state, providing introspection for better decision-making and resource management. Also encompasses understanding of other agents\' states, intentions, and roles in multi-agent systems, enabling effective collaboration and coordination with other entities.'
+          description: 'Supports self-monitoring and regulation of cognitive processes, allowing the system to reflect on its own thinking and decisions. Involves awareness of capabilities, limitations, and internal state for improved decision-making and resource use. Extends to understanding other agents’ states, intentions, and roles, enabling effective collaboration in multi-agent systems.'
         },
         
         // Explainability
         'explainability': {
           title: 'Explainability',
-          description: 'Provides transparency into the system\'s decision-making processes. Enables human understanding and trust in AI system behavior. Allows inspection and understanding of the logical steps leading to decisions, providing audit trails and debugging capabilities for system behavior. Enables human-like communication for querying and understanding system behavior, allowing users to ask questions and receive explanations in natural language.'
+          description: 'Provides transparency into decision-making, enabling human understanding and trust. Supports inspection of logical steps with audit trails for debugging. Offers natural language explanations, allowing users to query and understand system behavior.'
         },
         
         // System 2: Strategic Layer
@@ -3513,7 +3517,7 @@ oiled gears, 4/22/2020</code></pre>
         },
         'behavior-trees': {
           title: 'Behavior Trees',
-          description: 'Implemented using Behavior Trees (BTs), the tactical layer provides dual functionality: executing coordinated sequences of operations while maintaining dynamic environmental reactive responses. The hierarchical design structure of BTs enables real-time collision avoidance and adaptive behavior through embedded task prioritization mechanisms that can override or modify planned actions when necessary. The control models in BTs can selectively engage specialized policies, including whole-body compliant control, motion planning, and path planning algorithms.<br><br><button class="demo-button" onclick="openImageModal(\'assets/images/architecture/Robots-BTs.png\', \'Behavior Trees Structure\', \'Example behavior tree structure showing hierarchical decision-making nodes\')" style="margin-top: 10px; padding: 8px 16px; background: var(--accent-color); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">🖼️ View Behavior Trees Figure</button>'
+          description: 'Implemented with Behavior Trees (BTs), the tactical layer both executes coordinated task sequences and reacts dynamically to the environment. The hierarchical BT structure supports real-time collision avoidance and adaptive behavior through task prioritization that can override or adjust plans as needed. BTs also enable selective use of specialized control policies, including whole-body compliance, motion planning, and path planning.<br><br><div style="text-align: center; margin-top: -20px; width: 75%; margin-left: auto; margin-right: auto;"><img src="assets/images/architecture/Robots-BTs.png" alt="Behavior Trees Structure" onclick="openBehaviorTreesModal()" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s ease;" onmouseover="this.style.transform=\'scale(1.02)\'" onmouseout="this.style.transform=\'scale(1)\'"><br><small style="color: var(--secondary-color); font-style: italic; margin-top: 0px; display: block;">Click to zoom</small></div>'
         },
         'effector-services': {
           title: 'Effector Services',
@@ -3677,7 +3681,21 @@ oiled gears, 4/22/2020</code></pre>
       modal.style.display = 'block';
       modalImg.src = src;
       modalImg.alt = alt;
-      modalCaption.textContent = caption;
+      modalCaption.innerHTML = caption;
+      
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function openBehaviorTreesModal() {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const modalCaption = document.getElementById('modalCaption');
+      
+      modal.style.display = 'block';
+      modalImg.src = 'assets/images/architecture/Robots-BTs.png';
+      modalImg.alt = 'Behavior Trees Structure';
+      modalCaption.innerHTML = '<strong>(a)</strong> UGV for ground-level exploration. <strong>(b)</strong> Parrot drone for aerial scanning. <strong>(c)</strong> 6-DoF robot. <strong>(d)</strong> Nodes in BTs. <strong>(e)</strong> BT design template for the robots\' tactical layer. <strong>(f)</strong> Sample BT on the UGV and 6-DoF robot.';
       
       // Prevent body scroll when modal is open
       document.body.style.overflow = 'hidden';
