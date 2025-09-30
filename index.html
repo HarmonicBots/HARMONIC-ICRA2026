@@ -190,9 +190,29 @@
     }
     
     .architecture-hotspot.active {
-      background: #ffa500;
-      border-color: #000;
-      box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+      animation: color-glow-pulse 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes color-glow-pulse {
+      0% {
+        background: #ffd700;
+        border-color: #000;
+        border-width: 2px;
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      100% {
+        background: #ffa500;
+        border-color: #ff0000;
+        border-width: 3px;
+        transform: scale(1.2);
+        box-shadow: 
+          0 0 15px rgba(255, 0, 0, 1),
+          0 0 25px rgba(255, 0, 0, 0.8),
+          0 0 35px rgba(255, 0, 0, 0.6),
+          0 0 45px rgba(255, 0, 0, 0.4),
+          0 0 55px rgba(255, 0, 0, 0.2);
+      }
     }
     
     
@@ -1546,7 +1566,7 @@
       <h2>Architecture</h2>
       <div style="text-align: right; margin-bottom: 20px; color: var(--accent-color); font-weight: 600;">
         <span style="color: var(--accent-color);">💡 Interactive:</span> 
-        <span style="color: var(--text-color);">Click on the highlighted areas to explore each component in detail.</span>
+        <span style="color: var(--text-color);">Click on the hotspot areas to explore each component in detail.</span>
       </div>
       <div class="figure" style="display: flex; align-items: stretch; gap: 20px; flex-wrap: wrap;">
         <div class="interactive-architecture" style="flex: 0 0 auto; max-width: 70%;">
@@ -1609,7 +1629,7 @@
             <div class="default-message">
               <i class="fas fa-hand-pointer"></i>
               <strong>Interactive Architecture</strong><br>
-              Click on the highlighted areas to learn more about each component of the HARMONIC system.
+              Click on the hotspot areas to learn more about each component of the HARMONIC system.
             </div>
           </div>
         </div>
@@ -3499,7 +3519,7 @@ oiled gears, 4/22/2020</code></pre>
         // System 1: Tactical Layer
         'system1-layer': {
           title: 'System 1: Tactical (Control) Layer',
-          description: 'The tactical layer handles robotic control and execution, grounding cognitive capabilities in physical embodiment. It manages robot action planning, reflexive attention, and execution of motor actions in response to high-level commands from the strategic layer. The attention service in this layer interprets perceptual inputs and assigns priority to sensory signals before passing them to the attention service in the strategic layer.<br><br><button class="demo-button" onclick="openVideoModal(\'assets/videos/demos/ICRA26_4530_VI_i.mp4\', \'Tactical Layer in Action - Real-time execution and reactive behaviors\')" style="margin-top: 10px; padding: 8px 16px; background: var(--accent-color); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">▶ Watch Tactical Layer Demo</button>'
+          description: 'The tactical layer handles robotic control and execution, grounding cognitive capabilities in physical embodiment. It manages robot action planning, reflexive attention, and execution of motor actions in response to high-level commands from the strategic layer. The attention service in this layer interprets perceptual inputs and assigns priority to sensory signals before passing them to the attention service in the strategic layer.<br><br><div style="text-align: center; margin-top: 0px; width: 90%; margin-left: auto; margin-right: auto;"><video src="assets/videos/demos/tactical_animation.mp4" onclick="openTacticalVideoModal()" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); cursor: pointer; transition: transform 0.2s ease;" onmouseover="this.style.transform=\'scale(1.02)\'" onmouseout="this.style.transform=\'scale(1)\'" controls muted loop autoplay></video><br><small style="color: var(--secondary-color); font-style: italic; margin-top: 0px; display: block;">Click on the video to zoom</small></div>'
         },
         
         // System 1 Components
@@ -3696,6 +3716,22 @@ oiled gears, 4/22/2020</code></pre>
       modalImg.src = 'assets/images/architecture/Robots-BTs.png';
       modalImg.alt = 'Behavior Trees Structure';
       modalCaption.innerHTML = '<strong>(a)</strong> UGV for ground-level exploration. <strong>(b)</strong> Parrot drone for aerial scanning. <strong>(c)</strong> 6-DoF robot. <strong>(d)</strong> Nodes in BTs. <strong>(e)</strong> BT design template for the robots\' tactical layer. <strong>(f)</strong> Sample BT on the UGV and 6-DoF robot.';
+      
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function openTacticalVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      const modalCaption = document.getElementById('modalVideoCaption');
+      
+      modal.style.display = 'block';
+      modalVideo.src = 'assets/videos/demos/tactical_animation.mp4';
+      modalCaption.textContent = 'Data-flow and control schematic illustrating the interactions between the behavior trees (BTs) in the tactical layer and the OntoAgent component in the strategic layer of the HARMONIC system.';
+      
+      // Start playing the video
+      modalVideo.play();
       
       // Prevent body scroll when modal is open
       document.body.style.overflow = 'hidden';
